@@ -1,0 +1,15 @@
+version: '3'
+services:
+  flask-app:
+    build:
+      context: ./backend
+    ports:
+      - '5000:5000'
+    depends_on:
+      - next-app
+
+  next-app:
+    build:
+      context: ./frontend
+    ports:
+      - '3000:3000'
